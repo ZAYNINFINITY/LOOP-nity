@@ -1,14 +1,53 @@
 # LOOP-nity
 
-LOOP-nity is a company and product brand focused on building modern digital experiences with AI-powered workflows, clean product design, and scalable web technology.
+LOOP-nity is a software solutions and AI company preparing to launch. We build modern digital products across web, mobile, desktop, hybrid platforms, SaaS systems, AI-powered tools, browser extensions, automation workflows, and custom business software.
 
-## Overview
+## About Us
 
-This repository is the foundation for LOOP-nity's product and engineering work. It provides a modern front-end stack for building polished web experiences, internal tools, and AI-enabled products.
+LOOP-nity is focused on creating practical, scalable, and future-ready technology products that help businesses grow, automate processes, and deliver better digital experiences. Our work combines software engineering, product design, AI, and automation to power solutions for startups, businesses, and digital-first brands.
+
+## Our Vision
+
+To become a leading software and AI company known for building high-quality digital products that solve real-world problems and improve efficiency across industries.
+
+## What We Build
+
+- Business and marketing websites
+- Web applications and dashboards
+- Mobile apps for Android and iOS
+- Desktop applications
+- Hybrid and cross-platform software
+- SaaS products and business platforms
+- AI solutions and AI-powered products
+- Workflow automation and smart business tools
+- Browser extensions and productivity tools
+- Custom software for companies and startups
+
+## Company Direction
+
+LOOP-nity is not limited to one product category. The company is designed to deliver a wide range of digital offerings, including:
+
+- Websites and landing pages
+- Product websites and brand experiences
+- Mobile and desktop applications
+- SaaS platforms and B2B tools
+- AI-powered software products
+- Business automation systems
+- Smart productivity and workflow solutions
+- Future-ready digital ecosystem products
 
 ## Mission
 
-LOOP-nity is building the next generation of practical, intelligent digital products — combining thoughtful design, reliable engineering, and AI-driven user experiences.
+Our mission is to build intelligent, user-friendly, and scalable software products that help people work smarter, move faster, and unlock new opportunities through technology.
+
+## Core Values
+
+- Practical innovation
+- User-first design
+- Scalable engineering
+- Smart automation
+- Reliable execution
+- Long-term product thinking
 
 ## Tech Stack
 
@@ -18,7 +57,7 @@ LOOP-nity is building the next generation of practical, intelligent digital prod
 - Routing: TanStack Router
 - Data fetching: TanStack Query
 - Styling: Tailwind CSS
-- UI primitives: Radix UI + shadcn/ui-inspired patterns
+- UI patterns: Radix UI + shadcn-inspired components
 - Testing: Vitest + Testing Library
 - Linting/formatting: ESLint + Prettier
 
@@ -100,13 +139,9 @@ From `package.json`:
 - `test` — run Vitest
 - `test:watch` — run Vitest in watch mode
 
-## Company Brand
-
-LOOP-nity represents a company focused on building modern products, streamlined experiences, and intelligent systems that help people work smarter and move faster.
-
 ## Status
 
-This repository is currently in its foundational product-development stage and is ready for building new features, interfaces, and AI-powered experiences for the LOOP-nity brand.
+This repository is the foundation for LOOP-nity's product development and digital engineering work. It is being prepared to support the creation of a wide range of software and AI-driven products under the LOOP-nity brand.
 
 ## License
 
