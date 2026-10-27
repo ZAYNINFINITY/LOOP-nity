@@ -1,18 +1,14 @@
 # LOOP-nity
 
-LOOP-nity is a modern web app scaffold built with Vite, React, and TanStack Start. It is configured as a Lovable-connected project and includes a styled component system, Tailwind-based UI setup, and a ready-to-use development workflow.
+LOOP-nity is a company and product brand focused on building modern digital experiences with AI-powered workflows, clean product design, and scalable web technology.
 
 ## Overview
 
-This repository currently contains the project foundation and configuration needed to build and run a front-end application with:
+This repository is the foundation for LOOP-nity's product and engineering work. It provides a modern front-end stack for building polished web experiences, internal tools, and AI-enabled products.
 
-- React 19
-- Vite 8
-- TanStack Start and Router
-- TanStack Query
-- Tailwind CSS v4
-- shadcn/ui-style component configuration
-- ESLint, Prettier, and Vitest support
+## Mission
+
+LOOP-nity is building the next generation of practical, intelligent digital products — combining thoughtful design, reliable engineering, and AI-driven user experiences.
 
 ## Tech Stack
 
@@ -22,27 +18,26 @@ This repository currently contains the project foundation and configuration need
 - Routing: TanStack Router
 - Data fetching: TanStack Query
 - Styling: Tailwind CSS
-- UI primitives: Radix UI + shadcn/ui patterns
+- UI primitives: Radix UI + shadcn/ui-inspired patterns
 - Testing: Vitest + Testing Library
 - Linting/formatting: ESLint + Prettier
 
-## Project Files
+## Project Structure
 
-- `package.json` — scripts and project dependencies
-- `vite.config.ts` — Vite/TanStack configuration
-- `components.json` — shadcn/ui component aliases and styling config
-- `bunfig.toml` — Bun package manager settings and supply-chain safety guard
-- `tsconfig.json` — TypeScript compiler configuration
-- `eslint.config.js` — ESLint rules and setup
-- `AGENTS.md` — project notes for connected Lovable workflow
-- `.gitignore` / `.prettierignore` / `.prettierrc` — repo hygiene and formatting defaults
+- `package.json` — project scripts and dependencies
+- `vite.config.ts` — Vite and framework configuration
+- `components.json` — UI component aliases and design system configuration
+- `bunfig.toml` — Bun package manager settings
+- `tsconfig.json` — TypeScript configuration
+- `eslint.config.js` — linting rules
+- `.gitignore` / `.prettierignore` / `.prettierrc` — project hygiene and formatting defaults
 
 ## Getting Started
 
 ### Prerequisites
 
 - Node.js 18+
-- Bun (recommended, because `bunfig.toml` is included)
+- Bun (recommended)
 
 ### Install dependencies
 
@@ -96,23 +91,23 @@ bun run lint
 
 From `package.json`:
 
-- `dev` — start the Vite/TanStack development server
+- `dev` — start the development server
 - `build` — create a production build
-- `build:dev` — development-mode production build
+- `build:dev` — create a development build
 - `preview` — preview the built app locally
 - `lint` — run ESLint
 - `format` — run Prettier
-- `test` — run Vitest suite once
-- `test:watch` — watch mode for tests
+- `test` — run Vitest
+- `test:watch` — run Vitest in watch mode
 
-## Notes
+## Company Brand
 
-This repository is set up as a Lovable-connected app foundation. The project includes a note in `AGENTS.md` reminding contributors not to rewrite published git history or force-push when the repo is connected to Lovable.
-
-## License
-
-This repository currently does not include a custom license file. If needed, add a project license before publishing the project.
+LOOP-nity represents a company focused on building modern products, streamlined experiences, and intelligent systems that help people work smarter and move faster.
 
 ## Status
 
-The project is in active scaffold/configuration stage and is ready for app development, feature implementation, and UI creation.
+This repository is currently in its foundational product-development stage and is ready for building new features, interfaces, and AI-powered experiences for the LOOP-nity brand.
+
+## License
+
+This project does not currently include a custom license file. Add one before public release if required.
