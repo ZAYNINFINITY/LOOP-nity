@@ -134,6 +134,12 @@ export function SiteNav() {
 }
 
 export function SiteFooter() {
+  // A range only makes sense once the studio has been trading for more than the
+  // current year. Printing "© 2026–2026" on day one reads as a template.
+  const currentYear = new Date().getFullYear();
+  const copyrightYears =
+    SITE.founded === currentYear ? String(SITE.founded) : `${SITE.founded}–${currentYear}`;
+
   return (
     <footer className="border-t border-border bg-surface">
       <div className="shell py-14 md:py-20">
@@ -205,7 +211,7 @@ export function SiteFooter() {
         </div>
         <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            © {SITE.founded}–{new Date().getFullYear()} {SITE.name}
+            © {copyrightYears} {SITE.name}
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
             Built in-house · No trackers
