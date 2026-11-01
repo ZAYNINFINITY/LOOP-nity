@@ -1,7 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter, SiteNav } from "@/components/SiteChrome";
-import { Ext, GITHUB, PageHead, Reveal } from "@/components/ui";
+import { Ext, GITHUB, LINKEDIN, PageHead, Reveal } from "@/components/ui";
 import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
@@ -70,6 +70,9 @@ function Contact() {
                   />
                 </span>
               </a>
+              <Ext href={LINKEDIN} className="text-link mt-6 w-fit">
+                Or message on LinkedIn
+              </Ext>
             </Reveal>
             <Reveal delay={0.1} className="flex flex-col bg-background p-8 md:p-12">
               <p className="eyebrow">See the work first</p>
