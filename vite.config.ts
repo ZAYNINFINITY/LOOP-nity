@@ -1,15 +1,27 @@
-// @lovable.dev/vite-tanstack-config already includes the following — do NOT add them manually
-// or the app will break with duplicate plugins:
-//   - TanStack devtools (dev-only, first), tanstackStart, viteReact, tailwindcss, tsConfigPaths,
-//     nitro (build-only using cloudflare as a default target), VITE_* env injection, @ path alias,
-//     React/TanStack dedupe, error logger plugins, and sandbox detection (port/host/strictPort).
-// You can pass additional config via defineConfig({ vite: { ... }, etc... }) if needed.
-import { defineConfig } from "@lovable.dev/vite-tanstack-config";
+import { defineConfig } from "vite";
+import { tanstackStart } from "@tanstack/react-start/plugin/vite";
+import viteReact from "@vitejs/plugin-react";
+import tailwindcss from "@tailwindcss/vite";
+import tsConfigPaths from "vite-tsconfig-paths";
+import { nitro } from "nitro/vite";
 
 export default defineConfig({
-  tanstackStart: {
+  plugins: [
+    tsConfigPaths({ projects: ["./tsconfig.json"] }),
     // Redirect TanStack Start's bundled server entry to src/server.ts (our SSR error wrapper).
-    // nitro/vite builds from this
-    server: { entry: "server" },
-  },
+    tanstackStart({ server: { entry: "server" } }),
+    viteReact(),
+    tailwindcss(),
+    /**
+     * Nitro is what turns the SSR bundle into a real deployable server.
+     *
+     * Why this is required and not optional: `vite build` alone emits
+     * `dist/client` + `dist/server/server.js`, which is not a platform build
+     * output. Deployed as-is, the host has no server entry to route requests to
+     * and answers every path with 404. The `vercel` preset makes Nitro emit the
+     * Build Output API layout (`.vercel/output`) instead, which is the contract
+     * the platform actually reads.
+     */
+    nitro({ preset: "vercel" }),
+  ],
 });

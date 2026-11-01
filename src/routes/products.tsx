@@ -7,17 +7,17 @@ import { PageHead, Reveal } from "@/components/ui";
 export const Route = createFileRoute("/products")({
   head: () => ({
     meta: [
-      { title: "Products — LOOP-nity" },
+      { title: "Products — Loopnity" },
       {
         name: "description",
         content:
-          "Software products owned and built by LOOP-nity. The first is POS-it, an offline-first point-of-sale and inventory desktop application, currently in development.",
+          "Software products owned and built by Loopnity. The first is POS-it, an offline-first point-of-sale and inventory desktop application, currently in development.",
       },
-      { property: "og:title", content: "Products — LOOP-nity" },
+      { property: "og:title", content: "Products — Loopnity" },
       {
         property: "og:description",
         content:
-          "POS-it is LOOP-nity's first product: an offline-first point-of-sale and inventory application, currently in development.",
+          "POS-it is Loopnity's first product: an offline-first point-of-sale and inventory application, currently in development.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -48,7 +48,7 @@ function Products() {
               Products we own and build<span className="text-primary">.</span>
             </>
           }
-          lede="Alongside client work, LOOP-nity develops its own software products. They are built slowly and honestly — announced when they exist, not before."
+          lede="Alongside client work, Loopnity develops its own software products. They are built slowly and honestly — announced when they exist, not before."
         />
 
         <section aria-labelledby="posit-h" className="shell py-16 md:py-24">

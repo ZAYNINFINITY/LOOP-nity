@@ -7,17 +7,17 @@ import { Ext, GITHUB, PageHead, Reveal } from "@/components/ui";
 export const Route = createFileRoute("/work")({
   head: () => ({
     meta: [
-      { title: "Work — LOOP-nity" },
+      { title: "Work — Loopnity" },
       {
         name: "description",
         content:
-          "Genuine work from LOOP-nity: the POS-it product concept in development, this website designed and built in-house, and open code on GitHub.",
+          "Genuine work from Loopnity: the POS-it product concept in development, this website designed and built in-house, and open code on GitHub.",
       },
-      { property: "og:title", content: "Work — LOOP-nity" },
+      { property: "og:title", content: "Work — Loopnity" },
       {
         property: "og:description",
         content:
-          "What LOOP-nity has actually built so far — shown honestly, including its current stage.",
+          "What Loopnity has actually built so far — shown honestly, including its current stage.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -41,7 +41,7 @@ function Work() {
               What we have built so far<span className="text-primary">.</span>
             </>
           }
-          lede="LOOP-nity is a young company, so this page is short on purpose. Everything here is real, labeled with its actual stage, and nothing is borrowed from a client list that does not exist yet."
+          lede="Loopnity is a young company, so this page is short on purpose. Everything here is real, labeled with its actual stage, and nothing is borrowed from a client list that does not exist yet."
         />
 
         {/* POS-it */}
@@ -84,7 +84,7 @@ function Work() {
                 This website.
               </h2>
               <p className="mt-4 max-w-[30rem] leading-relaxed text-muted-foreground">
-                The site you are reading is LOOP-nity's own work: the identity, the loop mark, the
+                The site you are reading is Loopnity's own work: the identity, the loop mark, the
                 layout, and the code. It is a small but honest example of how we approach interface
                 design and front-end engineering.
               </p>

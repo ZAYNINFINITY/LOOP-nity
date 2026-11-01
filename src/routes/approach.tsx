@@ -6,13 +6,13 @@ import { PageHead, Reveal } from "@/components/ui";
 export const Route = createFileRoute("/approach")({
   head: () => ({
     meta: [
-      { title: "Approach — LOOP-nity" },
+      { title: "Approach — Loopnity" },
       {
         name: "description",
         content:
-          "How LOOP-nity works: discovery and scope, design, build, then test and iterate — with honest estimates and plain communication throughout.",
+          "How Loopnity works: discovery and scope, design, build, then test and iterate — with honest estimates and plain communication throughout.",
       },
-      { property: "og:title", content: "Approach — LOOP-nity" },
+      { property: "og:title", content: "Approach — Loopnity" },
       {
         property: "og:description",
         content:
@@ -66,7 +66,7 @@ function Approach() {
               A steady loop, not a straight line<span className="text-primary">.</span>
             </>
           }
-          lede="Good software is rarely built in one pass. LOOP-nity works in a deliberate cycle — understand, design, build, test, refine — so each version is better than the last."
+          lede="Good software is rarely built in one pass. Loopnity works in a deliberate cycle — understand, design, build, test, refine — so each version is better than the last."
         />
 
         <section aria-label="Process" className="shell py-16 md:py-24">

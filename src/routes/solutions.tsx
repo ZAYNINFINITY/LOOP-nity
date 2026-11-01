@@ -6,13 +6,13 @@ import { PageHead, Reveal } from "@/components/ui";
 export const Route = createFileRoute("/solutions")({
   head: () => ({
     meta: [
-      { title: "Solutions — LOOP-nity" },
+      { title: "Solutions — Loopnity" },
       {
         name: "description",
         content:
           "Software solutions organized by client need: SaaS products, AI integrations and workflow automation, web apps and e-commerce, mobile, desktop and offline-first software, and APIs and custom business systems.",
       },
-      { property: "og:title", content: "Solutions — LOOP-nity" },
+      { property: "og:title", content: "Solutions — Loopnity" },
       {
         property: "og:description",
         content:
@@ -85,7 +85,7 @@ function Solutions() {
               Software shaped around the problem<span className="text-primary">.</span>
             </>
           }
-          lede="Every engagement starts from what you need to achieve, not from a technology list. These are the kinds of problems LOOP-nity takes on — if yours is not here, ask anyway."
+          lede="Every engagement starts from what you need to achieve, not from a technology list. These are the kinds of problems Loopnity takes on — if yours is not here, ask anyway."
         />
         <section aria-label="Solution areas" className="shell py-16 md:py-24">
           <ol>

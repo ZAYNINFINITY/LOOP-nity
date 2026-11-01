@@ -11,7 +11,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
-import { reportLovableError } from "../lib/lovable-error-reporting";
+import { SITE } from "@/lib/site";
 
 function NotFoundComponent() {
   return (
@@ -38,9 +38,6 @@ function NotFoundComponent() {
 function ErrorComponent({ error, reset }: ErrorComponentProps) {
   console.error(error);
   const router = useRouter();
-  useEffect(() => {
-    reportLovableError(error, { boundary: "tanstack_root_error_component" });
-  }, [error]);
 
   return (
     <div className="flex min-h-screen items-center justify-center bg-background px-4">
@@ -78,11 +75,21 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "LOOP-nity" },
-      { name: "description", content: "LOOP-nity, an independent software studio." },
-      { name: "author", content: "LOOP-nity" },
+      { title: "Loopnity" },
+      { name: "description", content: "Loopnity, an independent software studio." },
+      { name: "author", content: "Loopnity" },
       { property: "og:type", content: "website" },
+      { property: "og:site_name", content: "Loopnity" },
+      { property: "og:locale", content: "en" },
+      { property: "og:image", content: `${SITE.url}/og.png` },
+      { property: "og:image:width", content: "1200" },
+      { property: "og:image:height", content: "630" },
+      {
+        property: "og:image:alt",
+        content: "Loopnity — independent software and AI studio",
+      },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: `${SITE.url}/og.png` },
       { name: "theme-color", content: "#0B0D10" },
     ],
     links: [
@@ -97,6 +104,25 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: appCss,
       },
       { rel: "icon", href: "/favicon.svg", type: "image/svg+xml" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "Organization",
+          name: SITE.name,
+          legalName: SITE.legalName,
+          url: SITE.url,
+          logo: `${SITE.url}/favicon.svg`,
+          description: SITE.tagline,
+          foundingDate: String(SITE.founded),
+          founder: { "@type": "Person", name: SITE.founder },
+          address: { "@type": "PostalAddress", addressCountry: "PK" },
+          email: SITE.email,
+          sameAs: [SITE.socials.github, SITE.socials.linkedin],
+        }),
+      },
     ],
   }),
   shellComponent: RootShell,

@@ -2,15 +2,28 @@ import { Link, useRouterState } from "@tanstack/react-router";
 import { AnimatePresence, motion } from "motion/react";
 import { Menu, X } from "lucide-react";
 import { useEffect, useRef, useState } from "react";
-import { Logo, LoopMark } from "@/components/LoopMark";
-import { EASE, Ext, GITHUB, LINKEDIN } from "@/components/ui";
+import { Logo, LoopMark, LoopnityWordmark } from "@/components/LoopMark";
+import { EASE, Ext } from "@/components/ui";
+import { SITE } from "@/lib/site";
 
 const NAV = [
   { to: "/solutions", label: "Solutions" },
-  { to: "/products", label: "Products" },
   { to: "/work", label: "Work" },
   { to: "/approach", label: "Approach" },
   { to: "/about", label: "About" },
+] as const;
+
+/**
+ * Information pages live in the footer rather than the main nav. A five-item
+ * primary nav is what a real company uses; a twelve-item one is what a site
+ * with no hierarchy uses.
+ */
+const COMPANY = [
+  { to: "/faq", label: "FAQ" },
+  { to: "/careers", label: "Careers" },
+  { to: "/security", label: "Security" },
+  { to: "/privacy", label: "Privacy" },
+  { to: "/terms", label: "Terms" },
 ] as const;
 
 export function SiteNav() {
@@ -55,7 +68,7 @@ export function SiteNav() {
       }`}
     >
       <div className="shell flex h-16 items-center justify-between">
-        <Link to="/" aria-label="LOOP-nity — home" className="-m-2 p-2">
+        <Link to="/" aria-label="Loopnity — home" className="-m-2 p-2">
           <Logo />
         </Link>
         <nav aria-label="Primary" className="hidden items-center md:flex">
@@ -126,14 +139,25 @@ export function SiteFooter() {
       <div className="shell py-14 md:py-20">
         <div className="grid gap-12 md:grid-cols-12 md:gap-6">
           <div className="md:col-span-5">
-            <Logo />
+            <LoopnityWordmark className="text-[1.25rem]" />
             <p className="mt-5 max-w-[26rem] text-sm leading-relaxed text-muted-foreground">
-              An independent software company based in Pakistan, building its own products and
-              practical software for clients.
+              {SITE.tagline} We build web, mobile and AI systems for teams that need the work
+              done properly the first time.
             </p>
+            <address className="mt-6 flex flex-col gap-2 not-italic">
+              <a
+                href={`mailto:${SITE.email}`}
+                className="w-fit text-sm text-foreground underline decoration-border underline-offset-4 transition-colors hover:decoration-primary"
+              >
+                {SITE.email}
+              </a>
+              <span className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
+                {SITE.location}
+              </span>
+            </address>
             <LoopMark className="mt-8 w-28 opacity-60" strokeWidth={2} />
           </div>
-          <nav aria-label="Footer" className="md:col-span-3 md:col-start-7">
+          <nav aria-label="Site" className="md:col-span-2 md:col-start-7">
             <p className="eyebrow">Site</p>
             <ul className="mt-5 space-y-3 text-sm">
               {[{ to: "/", label: "Home" }, ...NAV, { to: "/contact", label: "Contact" }].map((n) => (
@@ -145,16 +169,34 @@ export function SiteFooter() {
               ))}
             </ul>
           </nav>
-          <div className="md:col-span-3 md:col-start-10">
+          <nav aria-label="Company" className="md:col-span-2 md:col-start-9">
+            <p className="eyebrow">Company</p>
+            <ul className="mt-5 space-y-3 text-sm">
+              {COMPANY.map((n) => (
+                <li key={n.to}>
+                  <Link to={n.to} className="text-muted-foreground transition-colors hover:text-foreground">
+                    {n.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </nav>
+          <div className="md:col-span-2 md:col-start-11">
             <p className="eyebrow">Elsewhere</p>
             <ul className="mt-5 space-y-3 text-sm">
               <li>
-                <Ext href={LINKEDIN} className="text-muted-foreground transition-colors hover:text-foreground">
+                <Ext
+                  href={SITE.socials.linkedin}
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
                   LinkedIn
                 </Ext>
               </li>
               <li>
-                <Ext href={GITHUB} className="text-muted-foreground transition-colors hover:text-foreground">
+                <Ext
+                  href={SITE.socials.github}
+                  className="text-muted-foreground transition-colors hover:text-foreground"
+                >
                   GitHub
                 </Ext>
               </li>
@@ -163,10 +205,10 @@ export function SiteFooter() {
         </div>
         <div className="mt-14 flex flex-wrap items-center justify-between gap-4 border-t border-border pt-6">
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            © {new Date().getFullYear()} LOOP-nity
+            © {SITE.founded}–{new Date().getFullYear()} {SITE.name}
           </p>
           <p className="font-mono text-[11px] uppercase tracking-[0.14em] text-muted-foreground">
-            Software for real-world work
+            Built in-house · No trackers
           </p>
         </div>
       </div>

@@ -9,17 +9,17 @@ import { EASE, Ext, Label, LINKEDIN, Reveal } from "@/components/ui";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "LOOP-nity — Software for real-world work" },
+      { title: "Loopnity — Software for real-world work" },
       {
         name: "description",
         content:
-          "LOOP-nity is an independent software company in Pakistan. We build our own software products and deliver practical web, mobile, desktop, and AI-assisted solutions for clients.",
+          "Loopnity is a software studio helping businesses grow with custom software. We turn ideas into scalable web, mobile, and AI-powered software solutions.",
       },
-      { property: "og:title", content: "LOOP-nity — Software for real-world work" },
+      { property: "og:title", content: "Loopnity — Software for real-world work" },
       {
         property: "og:description",
         content:
-          "An independent software company building its own products and practical software for clients: web, mobile, desktop, AI integrations, and custom business systems.",
+          "An independent software studio building its own products and practical software for clients: web, mobile, desktop, AI integrations, and custom business systems.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -47,8 +47,8 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <p className="eyebrow md:col-span-6">Independent software company</p>
-          <p className="eyebrow text-right md:col-span-6">Based in Pakistan</p>
+          <p className="eyebrow md:col-span-6">Software Solutions Agency</p>
+          <p className="eyebrow text-right md:col-span-6">Web • Mobile • AI • Business Automation</p>
         </motion.div>
 
         <div className="relative grid items-center md:grid-cols-12">
@@ -81,7 +81,7 @@ function Hero() {
             animate={{ scale: 1, opacity: 1, filter: "blur(0px)" }}
             transition={{ duration: 1.6, ease: EASE }}
           >
-            <LoopMark draw track strokeWidth={1.5} intensity={intensity} className="w-full" />
+            <LoopMark draw track connect strokeWidth={1.5} intensity={intensity} className="w-full" />
           </motion.div>
         </div>
 
@@ -93,9 +93,8 @@ function Hero() {
         >
           <LoopMark draw track strokeWidth={1.25} className="w-40 md:hidden" />
           <p className="max-w-[34rem] text-[1.0625rem] leading-relaxed text-muted-foreground md:col-span-6 lg:col-span-5">
-            LOOP-nity builds its own software products and delivers practical software for clients —
-            web and mobile apps, desktop and offline-first tools, AI integrations, and custom
-            business systems.
+            We help businesses turn ideas into fast, secure, and scalable custom software.
+            From MVPs to full-scale platforms, we build solutions that save time, cut costs, and drive growth.
           </p>
           <div className="flex flex-wrap items-center gap-x-7 gap-y-4 md:col-span-6 md:justify-end lg:col-span-7">
             <Link to="/contact" className="btn-primary group">
@@ -122,7 +121,7 @@ function TwoSides() {
     <section aria-labelledby="sides-h" className="border-t border-border bg-surface">
       <div className="shell py-20 md:py-28">
         <Reveal>
-          <Label n="01">What LOOP-nity does</Label>
+          <Label n="01">What Loopnity does</Label>
           <h2 id="sides-h" className="h-section mt-8 max-w-[16ch]">
             One company, two kinds of work.
           </h2>
@@ -134,7 +133,7 @@ function TwoSides() {
               Software we design, build, and stand behind.
             </h3>
             <p className="mt-4 max-w-[30rem] leading-relaxed text-muted-foreground">
-              LOOP-nity develops its own products for real-world work. The first is POS-it, an
+              Loopnity develops its own products for real-world work. The first is POS-it, an
               offline-first point-of-sale and inventory application, currently in development.
             </p>
             <Link
@@ -302,16 +301,16 @@ function HowToStart() {
           ))}
         </ol>
         <Reveal className="mt-14 flex flex-wrap items-center gap-x-7 gap-y-4">
-          <Ext href={LINKEDIN} className="btn-primary group">
-            Message on LinkedIn
+          <Link to="/contact" className="btn-primary group">
+            Get a free quote
             <ArrowUpRight
               aria-hidden
               className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             />
-          </Ext>
-          <Link to="/approach" className="text-link">
-            How we work
           </Link>
+          <Ext href={LINKEDIN} className="text-link">
+            Message on LinkedIn
+          </Ext>
         </Reveal>
       </div>
     </section>
@@ -328,12 +327,51 @@ function Home() {
       <main id="main">
         <Hero />
         <TwoSides />
+        <section className="relative border-t border-border py-16 md:py-24">
+          <div className="shell">
+            <Reveal className="grid items-end gap-8 md:grid-cols-12">
+              <div className="md:col-span-7">
+                <p className="eyebrow">Our Services</p>
+                <h2 className="mt-4 font-display text-3xl tracking-tight sm:text-4xl lg:text-5xl">
+                  Software built to solve business problems
+                </h2>
+              </div>
+              <div className="md:col-span-5 md:self-end">
+                <p className="text-lg leading-relaxed text-muted-foreground">
+                  End-to-end development for web, mobile, AI, and custom business systems.
+                </p>
+              </div>
+            </Reveal>
+            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+              {[
+                ["Web Applications", "Fast, secure and scalable web apps built with modern tech."],
+                ["Mobile Apps", "iOS & Android apps designed for great user experience."],
+                ["AI & Automation", "AI integrations, chatbots and workflow automation to save time."],
+                ["Custom Business Systems", "CRMs, ERPs, dashboards and tools tailored to your workflow."],
+              ].map(([title, desc]) => (
+                <Reveal key={title} className="card h-full p-7">
+                  <h3 className="font-display text-xl font-semibold tracking-tight">{title}</h3>
+                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
+                </Reveal>
+              ))}
+            </div>
+            <Reveal className="mt-10">
+              <Link to="/contact" className="btn-primary group">
+                Discuss your project
+                <ArrowUpRight
+                  aria-hidden
+                  className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+                />
+              </Link>
+            </Reveal>
+          </div>
+        </section>
         <Needs />
         <ProductTeaser />
         <HowToStart />
         <section aria-label="Scroll" className="border-t border-border">
           <div className="shell flex items-center justify-between py-6">
-            <p className="eyebrow">LOOP-nity</p>
+            <p className="eyebrow">Loopnity</p>
             <ArrowDown aria-hidden className="size-4 text-muted-foreground" />
           </div>
         </section>

@@ -6,17 +6,17 @@ import { Ext, GITHUB, LINKEDIN, PageHead, Reveal } from "@/components/ui";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — LOOP-nity" },
+      { title: "Contact — Loopnity" },
       {
         name: "description",
         content:
-          "Start a project with LOOP-nity. The direct route is a message on LinkedIn — describe the problem in plain language and get a personal reply.",
+          "Start a project with Loopnity. The direct route is a message on LinkedIn — describe the problem in plain language and get a personal reply.",
       },
-      { property: "og:title", content: "Contact — LOOP-nity" },
+      { property: "og:title", content: "Contact — Loopnity" },
       {
         property: "og:description",
         content:
-          "The direct route to LOOP-nity is a message on LinkedIn. Describe the problem in plain language and get a personal reply.",
+          "The direct route to Loopnity is a message on LinkedIn. Describe the problem in plain language and get a personal reply.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
