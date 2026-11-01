@@ -17,7 +17,7 @@ export const SITE = {
   /** Legal/registration name, shown in legal documents. */
   legalName: "Loopnity",
   /** Short positioning line used in metadata and the footer. */
-  tagline: "An independent software and AI studio.",
+  tagline: "An independent software studio.",
 
   /**
    * Contact address for new work. Kept separate from the personal address so

@@ -86,7 +86,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:image:height", content: "630" },
       {
         property: "og:image:alt",
-        content: "Loopnity — independent software and AI studio",
+        content: "Loopnity — independent software studio",
       },
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: `${SITE.url}/og.png` },
