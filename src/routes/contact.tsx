@@ -1,7 +1,8 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowUpRight } from "lucide-react";
 import { SiteFooter, SiteNav } from "@/components/SiteChrome";
-import { Ext, GITHUB, LINKEDIN, PageHead, Reveal } from "@/components/ui";
+import { Ext, GITHUB, PageHead, Reveal } from "@/components/ui";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/contact")({
   head: () => ({
@@ -10,13 +11,13 @@ export const Route = createFileRoute("/contact")({
       {
         name: "description",
         content:
-          "Start a project with Loopnity. The direct route is a message on LinkedIn — describe the problem in plain language and get a personal reply.",
+          "Start a project with Loopnity. Email hello@loopnity.eu.org with the problem in plain language and get a personal reply.",
       },
       { property: "og:title", content: "Contact — Loopnity" },
       {
         property: "og:description",
         content:
-          "The direct route to Loopnity is a message on LinkedIn. Describe the problem in plain language and get a personal reply.",
+          "The direct route to Loopnity is email. Describe the problem in plain language and get a personal reply.",
       },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
@@ -46,7 +47,7 @@ function Contact() {
               Tell us what you need built<span className="text-primary">.</span>
             </>
           }
-          lede="The direct route is a message on LinkedIn. It goes to the person who will actually do the work, and every message gets a personal reply."
+          lede="The direct route is email. It reaches the person who will actually do the work, and every message gets a personal reply."
         />
 
         <section aria-label="Contact routes" className="shell py-16 md:py-24">
@@ -54,21 +55,21 @@ function Contact() {
             <Reveal className="flex flex-col bg-background p-8 md:p-12">
               <p className="eyebrow">Primary route</p>
               <h2 className="mt-5 font-display text-2xl font-bold tracking-tight md:text-3xl">
-                LinkedIn
+                Email
               </h2>
               <p className="mt-4 max-w-[30rem] leading-relaxed text-muted-foreground">
-                The fastest way to start. Send a connection request or a message with a short
-                description of what you need — no formal brief required.
+                Write to the studio directly. A short description of what you need is enough — no
+                formal brief required.
               </p>
-              <Ext href={LINKEDIN} className="btn-primary group mt-auto w-fit pt-0">
+              <a href={`mailto:${SITE.email}`} className="btn-primary group mt-auto w-fit pt-0">
                 <span className="mt-8 inline-flex items-center gap-3">
-                  Message on LinkedIn
+                  {SITE.email}
                   <ArrowUpRight
                     aria-hidden
                     className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                   />
                 </span>
-              </Ext>
+              </a>
             </Reveal>
             <Reveal delay={0.1} className="flex flex-col bg-background p-8 md:p-12">
               <p className="eyebrow">See the work first</p>

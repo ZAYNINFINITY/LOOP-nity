@@ -4,7 +4,8 @@ import { ArrowDown, ArrowUpRight } from "lucide-react";
 import { LoopMark } from "@/components/LoopMark";
 import { PosMock } from "@/components/PosMock";
 import { SiteFooter, SiteNav } from "@/components/SiteChrome";
-import { EASE, Ext, Label, LINKEDIN, Reveal } from "@/components/ui";
+import { EASE, Label, Reveal } from "@/components/ui";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -47,7 +48,7 @@ function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.6, delay: 0.1 }}
         >
-          <p className="eyebrow md:col-span-6">Software Solutions Agency</p>
+          <p className="eyebrow md:col-span-6">Independent software studio</p>
           <p className="eyebrow text-right md:col-span-6">Web • Mobile • AI • Business Automation</p>
         </motion.div>
 
@@ -268,7 +269,7 @@ function ProductTeaser() {
 /* ---------- how to start ---------- */
 
 const START_STEPS = [
-  ["Send a message", "Reach out on LinkedIn with a short description of what you need — a product idea, a process to fix, or a system to replace."],
+  ["Send a message", "Email a short description of what you need — a product idea, a process to fix, or a system to replace."],
   ["Scope it together", "We talk through the problem, constraints, and budget, and agree on what the first version should and should not include."],
   ["Get a written proposal", "You receive a clear scope, timeline, and price before any work starts. No surprises partway through."],
 ];
@@ -308,9 +309,9 @@ function HowToStart() {
               className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
             />
           </Link>
-          <Ext href={LINKEDIN} className="text-link">
-            Message on LinkedIn
-          </Ext>
+          <a href={`mailto:${SITE.email}`} className="text-link">
+            {SITE.email}
+          </a>
         </Reveal>
       </div>
     </section>
@@ -327,45 +328,6 @@ function Home() {
       <main id="main">
         <Hero />
         <TwoSides />
-        <section className="relative border-t border-border py-16 md:py-24">
-          <div className="shell">
-            <Reveal className="grid items-end gap-8 md:grid-cols-12">
-              <div className="md:col-span-7">
-                <p className="eyebrow">Our Services</p>
-                <h2 className="mt-4 font-display text-3xl tracking-tight sm:text-4xl lg:text-5xl">
-                  Software built to solve business problems
-                </h2>
-              </div>
-              <div className="md:col-span-5 md:self-end">
-                <p className="text-lg leading-relaxed text-muted-foreground">
-                  End-to-end development for web, mobile, AI, and custom business systems.
-                </p>
-              </div>
-            </Reveal>
-            <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-              {[
-                ["Web Applications", "Fast, secure and scalable web apps built with modern tech."],
-                ["Mobile Apps", "iOS & Android apps designed for great user experience."],
-                ["AI & Automation", "AI integrations, chatbots and workflow automation to save time."],
-                ["Custom Business Systems", "CRMs, ERPs, dashboards and tools tailored to your workflow."],
-              ].map(([title, desc]) => (
-                <Reveal key={title} className="card h-full p-7">
-                  <h3 className="font-display text-xl font-semibold tracking-tight">{title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{desc}</p>
-                </Reveal>
-              ))}
-            </div>
-            <Reveal className="mt-10">
-              <Link to="/contact" className="btn-primary group">
-                Discuss your project
-                <ArrowUpRight
-                  aria-hidden
-                  className="size-4 transition-transform duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                />
-              </Link>
-            </Reveal>
-          </div>
-        </section>
         <Needs />
         <ProductTeaser />
         <HowToStart />

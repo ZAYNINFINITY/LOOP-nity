@@ -3,6 +3,7 @@ import { ArrowUpRight } from "lucide-react";
 import { LoopMark } from "@/components/LoopMark";
 import { SiteFooter, SiteNav } from "@/components/SiteChrome";
 import { Ext, GITHUB, LINKEDIN, PageHead, Reveal } from "@/components/ui";
+import { SITE } from "@/lib/site";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -101,6 +102,13 @@ function About() {
                 managers, no hand-offs, no telephone game.
               </p>
               <div className="mt-8">
+                <a href={`mailto:${SITE.email}`} className="link-row group">
+                  <span>{SITE.email}</span>
+                  <ArrowUpRight
+                    aria-hidden
+                    className="size-4 text-muted-foreground transition-all duration-300 group-hover:-translate-y-0.5 group-hover:translate-x-0.5 group-hover:text-primary"
+                  />
+                </a>
                 <Ext href={LINKEDIN} className="link-row group">
                   <span>Message on LinkedIn</span>
                   <ArrowUpRight
